@@ -1,0 +1,56 @@
+<div class="y-card" style="height: 100%;">
+    <div class="y-card-header">
+        <div class="text-center">
+
+        </div>
+    </div>
+
+    <div class="y-card-body" style="overflow: hidden;">
+        <div class="container d-flex justify-content-center" style="margin-top: 2%;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>
+                        Registrar nuevo reporte de servicio
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form action="" [formGroup]="formReporteS" novalidate>
+                        <div class="form-group">
+                            <label for="id_Tecnico">Identificación del tecnico</label>
+                            <input type="text" class="form-control" name="id_Tecnico" id="id_Tecnico"
+                                formControlName="id_Tecnico">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_Servicio">Identificación del servicio </label>
+                            <input type="text" class="form-control" name="id_Servicio" id="id_Servicio"
+                                formControlName="id_Servicio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha_hora_inicio">Fecha y hora de inicio </label>
+                            <input type="datetime-local" class="form-control" name="fecha_hora_inicio"
+                                id="fecha_hora_inicio" formControlName="fecha_hora_inicio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha_hora_fin">Fecha y hora de finalización </label>
+                            <input type="datetime-local" class="form-control" name="fecha_hora_fin" id="fecha_hora_fins"
+                                formControlName="fecha_hora_fin">
+                        </div>
+
+                        <div class="form-group" style="margin-top: 5px;">
+                            <button style="width: 47%;" class="btn btn-outline-success btn-block "
+                                (click)="guardarReporte()" [disabled]="!formReporteS.valid"><i class="far fa-save"></i> Guardar</button>
+
+                            <button style="width: 48%; margin-left: 4%;" class="btn btn-outline-danger btn-block"
+                                (click)="cancelar()"> <i class="far fa-file-alt"></i> Nuevo</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

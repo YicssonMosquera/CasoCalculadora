@@ -1,0 +1,65 @@
+<div class="y-card" style="height: 100%;">
+    <div class="y-card-header" style="margin-top: 1%;">
+        <div class="text-center">
+            <h2><strong>Consulta de horas trabajadas por semana</strong></h2>
+
+        </div>
+
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="id_Tecnico">Identificación del tecnico </label>
+                        <input type="text" class="form-control" name="id_Tecnico" id="id_Tecnico"
+                        [(ngModel)]="id_Tecnico" required>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="dSemana">Numero de la semana </label>
+                        <input [(ngModel)]="dSemana" required type="text" class="form-control" name="dSemana"
+                            id="dSemana">
+
+                    </div>
+                </div>
+
+                <div class="col-md-2" style="margin-left: -11px;">
+                    <button type="button" (click)="consultarHoras()" class="btn btn-info"
+                        style="margin-top: 37%;">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="y-card-body" style="overflow: hidden; margin-top: 1%;">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Horas normales</th>
+                    <th scope="col">Horas nocturnas</th>
+                    <th scope="col">Horas dominicales</th>
+                    <th scope="col">Horas normales extras</th>
+                    <th scope="col">Horas nocturnas extras</th>
+                    <th scope="col">Horas dominicales extras</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let reporte of reporte' >
+                    <th scope="row">1</th>
+                    <td>{{reporte.horasNormales}}</td>
+                    <td>{{reporte.horasNocturnas}}</td>
+                    <td>{{reporte.horasDominicales}}</td>
+                    <td>{{reporte.horasNormalesExtras}}</td>
+                    <td>{{reporte.horasNocturnasExtras}}</td>
+                    <td>{{reporte.horasDominicalesExtras}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
